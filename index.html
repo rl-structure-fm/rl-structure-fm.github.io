@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>Workshop on Structure in Reinforcement Learning
+		in the Age of Foundation Models</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Custom styles for this template -->
+
+
+	<link href="../css/scrolling-nav.css" rel="stylesheet">
+	<link href="../css/style.css" rel="author stylesheet">
+	    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0M445FTS98"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0M445FTS98');
+</script>
+    </head>
+
+    <body id="page-top">
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
+	    <div class="container bar-container">
+<!--		<a class="title-head" href="#page-top">Interactive Learning with Implicit Human Feedback</a>-->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+		    <ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+				</li>
+
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#speakers">Speakers</a>
+				</li>
+
+				<!-- <li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#panelists">Panelists</a>
+				</li> -->
+
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#schedule">Schedule</a>
+				</li>
+
+<!-- 				<li class="nav-item">-->
+<!--				    <a class="nav-link js-scroll-trigger" href="#callpapers"> Call for papers </a>-->
+<!--				</li>-->
+
+				<!-- <li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#papers"> Papers </a>
+				</li> -->
+
+				<li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#organizers">Organizers</a>
+				</li>
+
+				<!-- <li class="nav-item">
+				    <a class="nav-link js-scroll-trigger" href="#sponsors">Sponsors</a>
+				</li> -->
+
+		    </ul>
+		</div>
+	    </div>
+	</nav>
+
+	<header class="headercontainer bg-primary text-white" style="padding: 0%; max-height: none; ">
+	    <div style="background-color: rgba(160,160,160,0.0)" class="text-center">
+		<div style="padding-bottom: 6%; padding-top: 6%; background-image: url('../images/amherst.jpg_large'); background-size: cover; background-position: center">
+
+	    <div class="container titlebox"; style="display: inline-block; background-color:rgba(0,0,0, 0.7); width:auto;">
+		<p style="text-align: center; margin-bottom: 2" class="title">Structure in Reinforcement Learning
+			in the Age of Foundation Models</p>
+		<p style="text-align: center; margin-bottom: 0" class="subtitle">Workshop RLC 2024 - August, 9th </p>
+		<p style="text-align: center; margin-bottom: 0" class="subtitle">Location: UMass Amherst</p>
+		<!-- <p style="text-align: center; margin-bottom: 0" class="subtitle">Gather.Town (virtual poster session): <a href="https://app.gather.town/app/7u7FSSSoJI065OnS/ICML%20ILHF%20Workshop%202023" target="_blank">Link</a></p> -->
+		<!-- <p style="text-align: center; margin-bottom: 0" class="subtitle">Check out the workshop <a href="https://icml.cc/virtual/2023/workshop/21477" target="_blank"> recording</a>!</p> -->
+		</div>
+	    </div>
+	    </div>
+	</header>
+
+	<hr class="half-rule"/>
+	<section id="about">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+				<span class=titlesec>About</span>
+				<br>
+				<span>
+					<p>Understanding the structures of problems and algorithms has been one of the key ideas in building more efficient algorithms for learning and solving Markov Decision Processes (MDPs) and partially observable Markov
+						Decision Processes (POMDPs). In particular, researchers have been studying various forms of structures in reward functions, transition functions, Q-value and value functions, and policies, such as factored MDPs, block
+						MDPs, object-oriented MDPs, hierarchical policies, linear and bilinear function classes, and various forms of programmatic function classes. This research has led to stronger theoretical guarantees on sample complexities,
+						algorithmic complexities, model performance, and the development of better algorithms.</p>
+<p>Recently, we have seen impressive results from foundation models, especially in large language and visionlanguage models. On many tasks, these models can generate high-quality language (or program) structural
+	abstractions for problems (in the forms of rewards, transition models, and programmatic policies, etc.), and sometimes directly solve various decision-making problems ranging from scheduling problems and games to robotics
+	tasks. In this workshop, we gather experts in both reinforcement learning and foundation models to discuss the
+	importance of various forms of structures in the era of foundation models. In particular, we hope to answer the
+	questions of:</p>				
+
+</span>
+
+				<span>
+
+					<ul>
+						<li style="padding-bottom: 10px">  Are these structures still important in solving practical reinforcement learning problems, or will they be
+							overshadowed by the availability of large data and computation?</li>
+						<li style="padding-bottom: 10px"> How can developments in foundation models help us predict desired structures in given problems, or even
+							discover new structures?</li>
+						<li style="padding-bottom: 10px"> How can our insights into structures underlying different problems help us build a better foundation model
+							that is useful for reinforcement learning problems?</li>
+					</ul>
+				</span>
+		    </div>
+
+		    <!-- <div class="col-md-10 mx-auto">
+				<span>
+					All our contributed papers are non-archival and can be submitted to other venues.
+					To ask questions during the workshop, use this <a href="https://app.sli.do/event/vxa9MZ2dRwJFtNi1VoTwe8/live/questions" target="_blank"> Sli.do link</a> or the embedded page below:
+					<br><br>
+					<iframe src="https://app.sli.do/event/vxa9MZ2dRwJFtNi1VoTwe8/live/questions" height="100%" width="100%" style="min-height: 560px;"></iframe>
+				</span>
+		    </div> -->
+		</div>
+	    </div>
+	</section>
+
+	<hr class="half-rule"/>
+	
+	<section id="speakers">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12 mx-auto">
+		<span class=titlesec> Speakers</span><br>
+
+		<div class="row">
+			
+			<a href='https://www.cs.toronto.edu/~sheila/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img src="../images/speakers/sheila.jpeg" class="figure-img img-fluid ">
+			<p class=profname><a href="https://www.cs.toronto.edu/~sheila/"> Sheila McIlraith </a> </p>
+			<p class=institution> University of Toronto </p>
+		    </div>
+			</a>
+
+			<a href='https://kuanghuei.github.io/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/kuang-huei.jpeg" class="figure-img img-fluid ">
+				<p class=profname><a href="https://kuanghuei.github.io/">  Kuang-Huei Lee </a></p>
+				<p class=institution> Google DeepMind </p>
+		    </div>
+
+			</a>
+			<a href="https://pinghsieh.github.io/">
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/ping-chun.jpeg' class="figure-img img-fluid ">
+				<p class=profname><a href="https://pinghsieh.github.io/"> Ping-Chun Hsieh</a></p>
+				<p class=institution> National Yang Ming Chiao Tung University </p>
+		    </div>
+			</a>
+
+			</a>
+
+		</div>
+		<div class="row">
+
+		<a href="https://furong-huang.com/">
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/hurong.jpeg' class="figure-img img-fluid ">
+				<p class=profname><a href="https://furong-huang.com/"> Furong Huang</a></p>
+				<p class=institution>University of Maryland</p>
+		    </div>
+			</a>
+
+			<a href="https://www.cs.ox.ac.uk/people/shimon.whiteson/">
+		   <div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/shimon.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://www.cs.ox.ac.uk/people/shimon.whiteson/"> Shimon Whiteson </a></p>
+				<p class=institution>  University of Oxford, Waymo </p>
+		    </div>
+			</a>
+
+			<a href='https://simonshaoleidu.com/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/simon.jpeg' class="figure-img img-fluid ">
+				<p class="profname"> <a href="https://simonshaoleidu.com/">Simon S. Du</a></p>
+				<p class=institution>University of Washington</p>
+		    </div>
+			</a>
+
+		</div>
+
+
+		</div>
+	</div>
+
+	</section>
+
+
+	<hr class="half-rule"/>
+
+	<!-- <section id="panelists">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-12 mx-auto">
+		<span class=titlesec>Panelists</span><br>
+
+		<div class="row">
+
+			<a href="https://cims.nyu.edu/~sbowman/">
+		   	<div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_bowman.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://cims.nyu.edu/~sbowman/"> Sam Bowman </a></p>
+				<p class=institution>  NYU and Anthropic </p>
+		    </div>
+			</a>
+
+			<a href="https://jimfan.me/">
+		   	<div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_fan.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://jimfan.me/"> Jim Fan </a></p>
+				<p class=institution>  NVIDIA </p>
+		    </div>
+			</a>
+
+			<a href="http://furong-huang.com/">
+		   	<div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_huang.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="http://furong-huang.com/"> Furong Huang </a></p>
+				<p class=institution>  University of Maryland </p>
+		    </div>
+			</a>
+
+			<a href="https://jessethomason.com/">
+		   	<div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_thomason.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://jessethomason.com/"> Jesse Thomason </a></p>
+				<p class=institution>  USC and Amazon </p>
+		    </div>
+			</a>
+
+		</div>
+
+		<div class="row">
+
+			<a href="https://cs.stanford.edu/~diyiy/">
+		   	<div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_yang.jpeg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://cs.stanford.edu/~diyiy/"> Diyi Yang </a></p>
+				<p class=institution>  Stanford University </p>
+		    </div>
+			</a>
+
+			<a href='https://david-abel.github.io/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img src="../images/speakers/profile_abel.jpeg" class="figure-img img-fluid ">
+				<p class=profname><a href="https://david-abel.github.io/"> David Abel </a> </p>
+				<p class=institution> Google DeepMind </p>
+		    </div>
+			</a>
+
+			<a href='http://people.eecs.berkeley.edu/~anca/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/organizers/anca.jpeg' class="figure-img img-fluid ">
+			<p class="profname"> <a href="http://people.eecs.berkeley.edu/~anca/"> Anca Dragan </a></p>
+			<p class=institution> University of California Berkeley</p>
+		    </div>
+			</a>
+
+			<a href='https://keerthanapg.com/about/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/profile_gopalakrishnan.jpeg' class="figure-img img-fluid ">
+				<p class="profname"> <a href="https://keerthanapg.com/about/">Keerthana Gopalakrishnan</a></p>
+				<p class=institution> Google Deepmind</p>
+		    </div>
+			</a>
+
+		</div>
+
+		<div class="row">
+
+			<a href="https://www.taylorkesslerfaulkner.com/">
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/profile_kesslerfaulkner.jpeg' class="figure-img img-fluid ">
+				<p class=profname><a href="https://www.taylorkesslerfaulkner.com/"> Taylor Kessler Faulkner</a></p>
+				<p class=institution>University of Washington</p>
+		    </div>
+			</a>
+
+		   <a href="https://www.bradknox.net/">
+		   <div class="profpic speaker xlarge-1 columns">
+			    <img  src="../images/speakers/profile_knox.jpg" class="figure-img img-fluid ">
+				<p class=profname> <a href="https://www.bradknox.net/"> Bradley Knox </a></p>
+				<p class=institution>  University of Texas Austin </p>
+		    </div>
+			</a>
+
+			<a href='https://hunch.net/~jl/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/organizers/john.jpeg' class="figure-img img-fluid ">
+				<p class="profname"> <a href="https://hunch.net/~jl/"> John Langford </a></p>
+				<p class=institution> Microsoft Research </p>
+		    </div>
+			</a>
+
+			<a href='https://www.microsoft.com/en-us/research/people/pmineiro/'>
+		    <div class="profpic speaker xlarge-1 columns">
+			    <img  src='../images/speakers/profile_mineiro.jpeg' class="figure-img img-fluid ">
+				<p class="profname"> <a href="https://www.microsoft.com/en-us/research/people/pmineiro/">Paul Mineiro</a></p>
+				<p class=institution>Microsoft Research</p>
+		    </div>
+			</a>
+
+		</div>
+
+	</div>
+</div>
+
+</section> -->
+
+
+	<hr class="half-rule"/>
+	<section class="">
+	    <div class="container" id="schedule">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+			<span class="titlesec"><span></span>Schedule</span>
+			<br><br>
+			<table class="table table-striped">
+				<tbody>
+				<tr>
+					<th style="width: 21%"> Time (ET)</th>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	09:00 am - 09:10 am        <td/><td>  Organizers <br> <b> Introductory Remarks  </b> </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	09:10 am - 09:45 am        <td/><td>    Invited Talk 1 <br>
+						<!-- <br>
+ 						<a data-toggle="collapse" data-target="#abstractjesse" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractjesse" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							In this talk, I will discuss the role of language in learning from interactions with humans.
+							I will first talk about how language instructions along with latent actions can enable shared autonomy in robotic manipulation problems.
+							I will then talk about creative ways of tapping into the rich context of large models to enable more aligned AI agents.
+							Specifically, I will discuss a few vignettes about how we can leverage LLMs and VLMs to learn human preferences, allow for grounded social reasoning, or enable teaching humans using corrective feedback.
+							I will finally conclude the talk by discussing how large models can be effective pattern machines that can identify patterns in a token invariant fashion and enable pattern transformation, extrapolation, and even show some evidence of pattern optimization for solving control problems.
+						</div> -->
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	09:45 am - 10:20 am        <td/><td>    Invited Talk 2 <br> 
+						<!-- <br> -->
+ 						<!-- <a data-toggle="collapse" data-target="#abstractjesse" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractjesse" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Pretrained language models (PTLM) are "all the rage" right now.
+							From the perspective of folks who have been working at the intersection of language, vision, and robotics since before it was cool, the noticeable impact is that researchers outside NLP feel like they should plug language into their work.
+							However, these models are exclusively trained on text data, usually only for next word prediction, and potentially for next word prediction but under a fine-tuned words-as-actions policy with thousands of underpaid human annotators in the loop (e.g., RLHF).
+							Even when a PTLM is "multimodal" that usually means "training also involved images and their captions, which describe the literal content of the image."
+							What meaning can we hope to extract from those kinds of models in the context of embodied, interactive systems?
+							In this talk, I'll cover some applications our lab has worked through in the space language and embodied systems with a broader lens towards open questions about the limits and (in)appropriate applications of current PTLMs with those systems.
+						</div> -->
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	10:20 am - 10:40 am        <td/><td>    Spotlights (5 min x 4)  </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	10:40 am - 11:25 am        <td/><td>    Poster Session 1 </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	11:25 am - 12:00 pm        <td/><td>    Invited Talk 3 </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	12:00 pm - 13:00 pm       <td/><td>    Lunch Break </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	13:00 pm - 13:35 pm        <td/><td>    Invited Talk 4 </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	13:35 pm - 14:10 pm        <td/><td>    Invited Talk 5 </td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	14:10 pm - 14:40 pm        <td/><td>    Poster Session 2</td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	14:40 pm - 15:15 pm        <td/><td>    Invited Talk 6</td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	15:15 pm - 16:00 pm        <td/><td>    Panel Discussion</td>
+				</tr>
+				<tr>
+					<td style="width: 21%">	16:00 pm - 16:05 pm        <td/><td>    Closing Remarks</td>
+				</tr>
+				<!-- <tr>
+					<td style="width: 21%">	10:30 am - 10:55 am        <td/><td>  Jonathan Grizou <br> <b> Aiming for internal consistency, the 4th pillar of interactive learning. </b>
+						<br>
+ 						<a data-toggle="collapse" data-target="#abstractjonathan" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractjonathan" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							I will propose a 2x2 matrix to position interactive learning systems and argue that the 4th corner of that space is yet to be fully explored by our research efforts.
+							By positioning recent work on that matrix, I hope to highlight a possible research direction and expose barriers to be overcome.
+							In that effort, I will attempt a live demonstration of IFTT-PIN, a self-calibrating interface we developed that permits a user to control an interface using signals whose meaning are initially unknown.
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	10:55 am - 11:20 am        <td/><td>  Daniel Brown <br> <b> Pitfalls and paths forward when learning rewards from human feedback </b>
+						<br>
+ 						<a data-toggle="collapse" data-target="#abstractdaniel" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractdaniel" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Human feedback is often incomplete, suboptimal, biased, and ambiguous, leading to misidentification of the human's true reward function and suboptimal agent behavior.
+							I will discuss these pitfalls as well as some of our recent work that seeks to overcome these problems via techniques that calibrate to user biases, learn from multiple feedback types, use human feedback to align robot feature representations, and enable interpretable reward learning.
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	11:20 am - 12:10 pm      <td/><td>
+						<b> Panel Session 1:</b> Sam Bowman, Jim Fan, Furong Huang, Jesse Thomason, Diyi Yang, Keerthana Gopalakrishnan
+					<div id="abstractkiley" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false"> </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	12:10 pm - 01:10 pm        <td/><td>    Lunch break  </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	01:10 pm - 01:35 pm        <td/><td>    Bradley Knox <br> <b> The EMPATHIC Framework for Task Learning from Implicit Human Feedback </b>
+					<br>
+ 						<a data-toggle="collapse" data-target="#abstractbrad" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractbrad" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Reactions such as gestures, facial expressions, and vocalizations are an abundant, naturally occurring channel of information that humans provide during interactions.
+							A robot or other agent could leverage an understanding of such implicit human feedback to improve its task performance at no cost to the human.
+							This approach contrasts with common agent teaching methods based on demonstrations, critiques, or other guidance that need to be attentively and intentionally provided.
+
+							In this talk, we first define the general problem of learning from implicit human feedback and then propose to address this problem through a novel data-driven framework, EMPATHIC.
+							This two-stage method consists of (1) mapping implicit human feedback to relevant task statistics such as rewards, optimality, and advantage; and (2) using such a mapping to learn a task.
+							We instantiate the first stage and three second-stage evaluations of the learned mapping.
+							To do so, we collect a dataset of human facial reactions while participants observe an agent execute a sub-optimal policy for a prescribed training task.
+							We train a deep neural network on this data and demonstrate its ability to (1) infer relative reward ranking of events in the training task from prerecorded human facial reactions; (2) improve the policy of an agent in the training task using live human facial reactions; and (3) transfer to a novel domain in which it evaluates robot manipulation trajectories.
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	01:35 pm - 02:00 pm        <td/><td>    David Abel <br> <b> Three Dogmas of Reinforcement Learning </b>
+					<br>
+ 						<a data-toggle="collapse" data-target="#abstractdavid" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractdavid" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Modern reinforcement learning has been in large part shaped by three dogmas.
+							The first is what I call the environment spotlight, which refers to our focus on environments rather than agents.
+							The second is our implicit treatment of learning as finding a solution, rather than endless adaptation.
+							The last is the reward hypothesis, which states that all goals and purposes can be well thought of as maximization of a reward signal.
+							In this talk I discuss how these dogmas have shaped our views on learning.
+							I argue that, when agents learn from human feedback, we ought to dispense entirely with the first two dogmas, while we must recognize and embrace the nuance implicit in the third.
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	02:00 pm - 02:25 pm        <td/><td>    Paul Mineiro <br> <b> Contextual Bandits without Rewards </b>
+					<br>
+ 						<a data-toggle="collapse" data-target="#abstractpaul" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstractpaul" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Contextual bandits are highly practical, but the need to specify a scalar reward limits their adoption.
+							This motivates study of contextual bandits where a latent reward must be inferred from post-decision observables, aka Interactive Grounded Learning.
+							An information theoretic argument indicates the need for additional assumptions to succeed, and I review some sufficient conditions from the recent literature.
+							I conclude with speculation about composing IGL with active learning.
+						</div>
+					</td>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	02:25 pm - 03:00 pm        <td/><td>    Contributed Talks </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	03:00 pm - 03:30 pm        <td/><td>    Coffee break + Poster Session  </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	03:30 pm - 04:00 pm        <td/><td>    Taylor Kessler Faulkner <br> <b> Robots Learning from Real People </b>
+					<br>
+ 						<a data-toggle="collapse" data-target="#abstracttaylor" class="collapsed abstract" aria-expanded="false"> Abstract</a>
+						<div id="abstracttaylor" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false">
+							Robots deployed in the wild can improve their performance by using input from human teachers.
+							Furthermore, both robots and humans can benefit when robots adapt to and learn from the people around them.
+							However, real people can act in imperfect ways, and can often be unable to provide input in large quantities.
+							In this talk, I will address some of the past research I have conducted toward addressing these issues, which has focused on creating learning algorithms that can learn from imperfect teachers.
+							I will also talk about my current work on the Robot-Assisted Feeding project in the Personal Robotics Lab at the University of Washington, which I am approaching through a similar lens of working with real teachers and possibly imperfect information.
+						</div>
+					</td>
+					</td>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">	04:00 pm - 04:50 pm      <td/><td>
+						<b> Panel Session 2:</b> David Abel, Anca Dragan, Keerthana Gopalakrishnan, Taylor Kessler Faulkner, Bradley Knox, John Langford, Paul Mineiro
+					<div id="abstractkiley" class="news collapse" style="margin-top: 10px; height: 22px;" aria-expanded="false"> </td>
+				</tr>
+
+				<tr>
+					<td style="width: 21%">
+						04:50 pm - 05:00 pm    <td/><td>   Organizers <br>  <b>    Concluding Remarks </b>
+					</td>
+				</tr> -->
+				
+
+				</tbody>
+
+			</table>
+		    </div>
+		</div>
+	    </div>
+	</section>
+
+
+
+<!--	<br>-->
+<!--	<hr class="half-rule"/>-->
+<!--<section id="callpapers">-->
+<!--	    <div class="container">-->
+<!--		<div class="row">-->
+<!--		    <div class="col-md-10 mx-auto">-->
+<!--		<span class=titlesec>Call for papers</span><br>-->
+<!--&lt;!&ndash;			   To be announced.&ndash;&gt;-->
+<!--				<span style="color:red">New: </span> The call for papers is now open.-->
+<!--			<br><br>-->
+<!--			<h5 style="font-weight: bold"> Areas of interest </h5>-->
+<!--			We solicit submissions related to (but not limited to) the following themes on interaction-grounded machine learning with humans:-->
+
+<!--			<br><br>-->
+<!--			<ul>-->
+<!--				<li style="padding-bottom: 10px"> Leveraging different types of human input modalities for interactive learning</li>-->
+<!--				<li style="padding-bottom: 10px"> Models and representations learned from human data</li>-->
+<!--				<li style="padding-bottom: 10px"> Online learning algorithms for human-machine collaboration</li>-->
+<!--				<li style="padding-bottom: 10px"> Personalized interaction-based learning</li>-->
+<!--				<li style="padding-bottom: 10px"> Theoretical advances for interactive learning with implicit human feedback</li>-->
+<!--				<li style="padding-bottom: 10px"> Interactive Learning with non-stationary rewards and environment dynamics</li>-->
+<!--				<li style="padding-bottom: 10px"> Applications for HCI and accessibility</li>-->
+<!--				<li style="padding-bottom: 10px"> Understanding how humans teach other humans and learning agents/embodied robots</li>-->
+
+<!--			</ul>-->
+<!--				All submissions will be managed through <a href="https://openreview.net/group?id=ICML.cc/2023/Workshop/ILHF">OpenReview</a>.-->
+<!--				The review process is double-blind so the submission should be anonymized.-->
+<!--				Papers should be a maximum of 8 pages (excluding references), and <a href="https://media.icml.cc/Conferences/ICML2023/Styles/icml2023.zip">formatted in ICML style</a>.-->
+<!--				Accepted papers will be presented as posters during the workshop and select works will be invited to give spotlight talks during the workshop.-->
+<!--				Accepted papers will be made available online on the workshop website as non-archival reports, allowing submissions to future conferences or journals.-->
+<!--			<br><br>-->
+<!--				Authors may optionally add appendices in their submitted paper.-->
+<!--				Supplementary Materials uploads are to only be used optionally for extra videos/code/data/figures and should be uploaded separately in the submission website.-->
+<!--			<br><br>-->
+
+<!--				Submissions will be evaluated based on novelty, rigor, and relevance to theme of the workshop. Both empirical and theoretical contributions are welcome.-->
+<!--				All participants must adhere to the ICML Code of Conduct.-->
+
+<!--						    <br><br>-->
+<!--			<h5 style="font-weight: bold"> Important Dates </h5>-->
+<!--			<ul>-->
+
+
+<!--			<li style="display: list-item">-->
+<!--				<b>Submission deadline:</b> May <s>24th</s> 31st, 2023, AoE.-->
+<!--			</li>-->
+<!--			<li style="display: list-item">-->
+<!--				<b>Author Notifications:</b> June 19th, 2023, AoE.-->
+
+
+<!--			</li>-->
+<!--				<li style="display: list-item">-->
+<!--					<b>Camera Ready:</b> July 10th, 2023, AoE.-->
+
+<!--			</li>-->
+<!--					<li style="display: list-item">-->
+<!--					<b>Workshop:</b> July 29th, 2023.-->
+
+<!--			</li>-->
+<!--			</ul>-->
+<!--	    </div>-->
+<!--		</div>-->
+<!--			</div>-->
+<!--		    </div>-->
+<!--		</div>-->
+<!--	</section>-->
+
+
+	<!-- <hr class="half-rule"/>
+	<section id="papers">
+
+		<div class="container">
+			<div class="row">
+			    <div class="col-md-10 mx-auto">
+					<span class=titlesec>Papers</span><br>
+
+					<ul class="listpapers">
+						<li>
+							Imitation Learning with Human Eye Gaze via Multi-Objective Prediction
+							<a class="linkpaper" href="./docs/camready_1.pdf"> [link]</a>
+							<span style="color: #ff8c00">(spotlight)</span>
+							<br>
+							<span class="authorname">
+								Ravi Kumar Thakur, MD Sunbeam, Vinicius G. Goecks, Ellen Novoseller, Ritwik Bera, Vernon Lawhern, Greg Gremillion, John Valasek, Nicholas R Waytowich
+							</span>
+						</li>
+
+						<li>
+							Learning from a Learning User for Optimal Recommendations
+							<a class="linkpaper" href="./docs/camready_2.pdf"> [link]</a>
+							<span style="color: #ff8c00">(spotlight)</span>
+							<br>
+							<span class="authorname">
+								Fan Yao, Chuanhao Li, Denis Nekipelov, Hongning Wang, Haifeng Xu
+							</span>
+						</li>
+
+						<li>
+							Survival Instinct in Offline Reinforcement Learning and Implicit Human Bias in Data
+							<a class="linkpaper" href="./docs/camready_3.pdf"> [link]</a>
+							<span style="color: #ff8c00">(spotlight)</span>
+							<br>
+							<span class="authorname">
+								Anqi Li, Dipendra Misra, Andrey Kolobov, Ching-An Cheng
+							</span>
+						</li>
+
+						<li>
+							UCB Provably Learns From Inconsistent Human Feedback
+							<a class="linkpaper" href="./docs/camready_4.pdf"> [link]</a>
+							<span style="color: #ff8c00">(spotlight)</span>
+							<br>
+							<span class="authorname">
+								Shuo Yang, Tongzheng Ren, Inderjit S Dhillon, Sujay Sanghavi
+							</span>
+						</li>
+
+						<li>
+							Visual-based Policy Learning with Latent Language Encoding
+							<a class="linkpaper" href="./docs/camready_5.pdf"> [link]</a>
+							<span style="color: #ff8c00">(spotlight)</span>
+							<br>
+							<span class="authorname">
+								Jielin Qiu, Mengdi Xu, William Han, Bo Li, Ding Zhao
+							</span>
+						</li>
+
+						<li>
+							Legible Robot Motion from Conditional Generative Models
+							<a class="linkpaper" href="./docs/camready_6.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Matthew Bronars, Danfei Xu
+							</span>
+						</li>
+
+						<li>
+							Asymptotically Optimal Fixed-Budget Best Arm Identification with Variance-Dependent Bounds
+							<a class="linkpaper" href="./docs/camready_7.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Masahiro Kato, Masaaki Imaizumi, Takuya Ishihara, Toru Kitagawa
+							</span>
+						</li>
+
+						<li>
+							RLHF-Blender: A Configurable Interactive Interface for Learning from Diverse Human Feedback
+							<a class="linkpaper" href="./docs/camready_8.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Yannick Metz, David Lindner, Raphaël Baur, Daniel A. Keim, Mennatallah El-Assady
+							</span>
+						</li>
+
+						<li>
+							Bandits Meet Mechanism Design to Combat Clickbait in Online Recommendation
+							<a class="linkpaper" href="./docs/camready_9.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Thomas Kleine Buening, Aadirupa Saha, Christos Dimitrakakis, Haifeng Xu
+							</span>
+						</li>
+
+						<li>
+							A Generative Model for Text Control in Minecraft
+							<a class="linkpaper" href="./docs/camready_10.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Shalev Lifshitz, Keiran Paster, Harris Chan, Jimmy Ba, Sheila A. McIlraith
+							</span>
+						</li>
+
+						<li>
+							Follow-ups Also Matter: Improving Contextual Bandits via Post-serving Contexts
+							<a class="linkpaper" href="./docs/camready_11.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Chaoqi Wang, Ziyu Ye, Zhe Feng, Ashwinkumar Badanidiyuru, Haifeng Xu
+							</span>
+						</li>
+
+						<li>
+							Bayesian Inverse Transition Learning for Offline Settings
+							<a class="linkpaper" href="./docs/camready_12.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Leo Benac, Sonali Parbhoo, Finale Doshi-Velez
+							</span>
+						</li>
+
+						<li>
+							Principal-Driven Reward Design and Agent Policy Alignment via Bilevel-RL
+							<a class="linkpaper" href="./docs/camready_13.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Souradip Chakraborty, Amrit Bedi, Alec Koppel, Furong Huang, Mengdi Wang
+							</span>
+						</li>
+
+						<li>
+							Temporally-Extended Prompts Optimization for SAM in Interactive Medical Image Segmentation
+							<a class="linkpaper" href="./docs/camready_14.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Chuyun Shen, Wenhao Li, Ya Zhang, Xiangfeng Wang
+							</span>
+						</li>
+
+						<li>
+							Relative Behavioral Attributes: Filling the Gap between Symbolic Goal Specification and Reward Learning from Human Preferences
+							<a class="linkpaper" href="./docs/camready_15.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Lin Guan, Karthik Valmeekam, Subbarao Kambhampati
+							</span>
+						</li>
+
+						<li>
+							Complementing a Policy with a Different Observation Space
+							<a class="linkpaper" href="./docs/camready_16.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Gokul Swamy, Sanjiban Choudhury, Drew Bagnell, Steven Wu
+							</span>
+						</li>
+
+						<li>
+							Cognitive Models as Simulators: Using Cognitive Models to Tap into Implicit Human Feedback
+							<a class="linkpaper" href="./docs/camready_17.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Ardavan S. Nobandegani, Thomas Shultz, Irina Rish
+							</span>
+						</li>
+
+						<li>
+							Unraveling the ARC Puzzle: Mimicking Human Solutions with Object-Centric Decision Transformer
+							<a class="linkpaper" href="./docs/camready_18.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Jaehyun Park, Jaegyun Im, Sanha Hwang, Mintaek Lim, Sabina Ualibekova, Sejin Kim, Sundong Kim
+							</span>
+						</li>
+
+						<li>
+							Selective Sampling and Imitation Learning via Online Regression
+							<a class="linkpaper" href="./docs/camready_19.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Ayush Sekhari, Karthik Sridharan, Wen Sun, Runzhe Wu
+							</span>
+						</li>
+
+						<li>
+							Learning Shared Safety Constraints from Multi-task Demonstrations
+							<a class="linkpaper" href="./docs/camready_20.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Konwoo Kim, Gokul Swamy, Zuxin Liu, Ding Zhao, Sanjiban Choudhury, Steven Wu
+							</span>
+						</li>
+
+						<li>
+							Strategic Apple Tasting
+							<a class="linkpaper" href="./docs/camready_21.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Keegan Harris, Chara Podimata, Steven Wu
+							</span>
+						</li>
+
+						<li>
+							Discovering User Types: Mapping User Traits by Task-Specific Behaviors in Reinforcement Learning
+							<a class="linkpaper" href="./docs/camready_22.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Lars Lien Ankile, Brian Ham, Kevin Mao, Eura Shin, Siddharth Swaroop, Finale Doshi-Velez, Weiwei Pan
+							</span>
+						</li>
+
+						<li>
+							Provable Offline Reinforcement Learning with Human Feedback
+							<a class="linkpaper" href="./docs/camready_23.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Wenhao Zhan, Masatoshi Uehara, Nathan Kallus, Jason D. Lee, Wen Sun
+							</span>
+						</li>
+
+						<li>
+							SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks
+							<a class="linkpaper" href="./docs/camready_24.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Bill Yuchen Lin, Yicheng Fu, Karina Yang, Prithviraj Ammanabrolu, Faeze Brahman, Shiyu Huang, Chandra Bhagavatula, Yejin Choi, Xiang Ren
+							</span>
+						</li>
+
+						<li>
+							How to Query Human Feedback Efficiently in RL?
+							<a class="linkpaper" href="./docs/camready_25.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Wenhao Zhan, Masatoshi Uehara, Wen Sun, Jason D. Lee
+							</span>
+						</li>
+
+						<li>
+							Contextual Bandits and Imitation Learning with Preference-Based Active Queries
+							<a class="linkpaper" href="./docs/camready_26.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Ayush Sekhari, Karthik Sridharan, Wen Sun, Runzhe Wu
+							</span>
+						</li>
+
+						<li>
+							Bayesian Active Meta-Learning under Prior Misspecification
+							<a class="linkpaper" href="./docs/camready_27.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Sabina J. Sloman, Ayush Bharti, Samuel Kaski
+							</span>
+						</li>
+
+						<li>
+							Contextual Set Selection Under Human Feedback With Model Misspecification
+							<a class="linkpaper" href="./docs/camready_28.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Shuo Yang, Rajat Sen, Sujay Sanghavi
+							</span>
+						</li>
+
+						<li>
+							Building Community Driven Libraries of Natural Programs
+							<a class="linkpaper" href="./docs/camready_29.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Leonardo Hernandez Cano, Yewen Pu, Robert D. Hawkins, Joshua B. Tenenbaum, Armando Solar-Lezama
+							</span>
+						</li>
+
+						<li>
+							Modeled Cognitive Feedback to Calibrate Uncertainty for Interactive Learning
+							<a class="linkpaper" href="./docs/camready_30.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Jaelle Scheuerman, Zachary Bishof, Chris J Michael
+							</span>
+						</li>
+
+						<li>
+							Improving Bionic Limb Control through Batch Reinforcement Learning in an Interactive Game Environment
+							<a class="linkpaper" href="./docs/camready_31.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Kilian Freitag, Rita Laezza, Jan Zbinden, Max Ortiz-Catalan
+							</span>
+						</li>
+
+						<li>
+							Rewarded soups: towards Pareto-optimality by interpolating weights fine-tuned on diverse rewards
+							<a class="linkpaper" href="./docs/camready_32.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Alexandre Rame, Guillaume Couairon, Corentin Dancette, Mustafa Shukor, Jean-Baptiste Gaya, Laure Soulier, Matthieu Cord
+							</span>
+						</li>
+
+						<li>
+							Inverse Preference Learning: Preference-based RL without a Reward Function
+							<a class="linkpaper" href="./docs/camready_33.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Joey Hejna, Dorsa Sadigh
+							</span>
+						</li>
+
+						<li>
+							Interactive-Chain-Prompting: Ambiguity Resolution for Crosslingual Conditional Generation with Interaction
+							<a class="linkpaper" href="./docs/camready_34.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Jonathan Pilault, Xavier Garcia, Arthur Brazinskas, Orhan Firat
+							</span>
+						</li>
+
+						<li>
+							Reinforcement learning with Human Feedback: Learning Dynamic Choices via Pessimism
+							<a class="linkpaper" href="./docs/camready_35.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Zihao Li, Zhuoran Yang, Mengdi Wang
+							</span>
+						</li>
+
+						<li>
+							Accelerating exploration and representation learning with offline pre-training
+							<a class="linkpaper" href="./docs/camready_36.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Bogdan Mazoure, Jake Bruce, Doina Precup, Rob Fergus, Ankit Anand
+							</span>
+						</li>
+
+						<li>
+							Active Learning with Crowd Sourcing Improves Information Retrieval
+							<a class="linkpaper" href="./docs/camready_37.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Zhuotong Chen, Yifei Ma, Branislav Kveton, Anoop Deoras
+							</span>
+						</li>
+
+						<li>
+							Guided Policy Search for Parameterized Skills using Adverbs
+							<a class="linkpaper" href="./docs/camready_38.pdf"> [link]</a>
+							<br>
+							<span class="authorname">
+								Benjamin Adin Spiegel, George Konidaris
+							</span>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<hr class="half-rule"/>
+	<section id="organizers">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+
+		<span class=titlesec>Organizers</span><br>
+		<div class="row">
+
+			<a href='https://jiayuanm.com/'>
+		    <div class="profpic xlarge-1 columns">
+			    <img src=../images/organizers/jiayuan.jpeg class="figure-img img-fluid ">
+			<p class=profname><a href="https://jiayuanm.com/"> Jiayuan Mao </a> </p>
+			<p class=institution> Massachusetts Institute of Technology </p>
+		    </div>
+			</a>
+
+			<a href='https://shaohua0116.github.io/'>
+		    <div class="profpic xlarge-1 columns">
+			    <img src=../images/organizers/shao-hua.jpeg class="figure-img img-fluid ">
+			<p class=profname><a href="https://shaohua0116.github.io/"> Shao-Hua Sun </a></p>
+			<p class=institution>National Taiwan University</p>
+		    </div>
+			</a>
+
+			<a href='https://jasonma2016.github.io/'>
+		    <div class="profpic xlarge-1 columns">
+			<img  src=../images/organizers/jason.jpeg class="figure-img img-fluid ">
+			<p class=profname>  <a href="https://jasonma2016.github.io/"> Jason Ma </a> </p>
+			<p class=institution> University of Pennsylvania </p>
+		    </div>
+			</a>
+
+		<a href='https://people.csail.mit.edu/lpk/'>
+		    <div class="profpic xlarge-1 columns">
+			<img  src=../images/organizers/leslie.jpeg class="figure-img img-fluid ">
+			<p class=profname>  <a href="https://people.csail.mit.edu/lpk/"> Leslie Kaebling </a> </p>
+			<p class=institution> Massachusetts Institute of Technology </p>
+		    </div>
+			</a>
+
+
+		</div>
+		
+
+
+		</div>
+</div>
+
+	</section>
+
+	<br>
+	<hr class="half-rule"/>
+	<section id="contact">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+		<span class=titlesec>Contact</span><br>
+		Reach out to TODO for any questions.
+		<!-- Reach out to <a href="mailto:interactive.implicit.learning@gmail.com">interactive.implicit.learning@gmail.com</a> for any questions. -->
+	    </div>
+		</div>
+		</div>
+	</section>
+
+
+	<!-- <hr class="half-rule"/>
+	<section id="sponsors">
+	    <div class="container">
+
+		<div class="row">
+		    <div class="col-md-10 mx-auto">
+			<span class=titlesec>Sponsors</span><br>
+				<img  src=../images/sponsors/microsoft.png style="width:400px;height:160px;">
+				<img  src=../images/sponsors/googledeepmind.png style="width:510px;height:90px;">
+			</div>
+		</div>
+
+		</div>
+	</section> -->
+
+	<!-- Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+<!-- 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- Plugin JavaScript -->
+	<!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js
+
+
+
+"> </script>
+
+	<!-- Custom JavaScript for this theme -->
+	<script src="js/scrolling-nav.js"></script>
+
+    </body>
+
+
+</html>
